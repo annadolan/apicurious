@@ -15,6 +15,9 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+    <%= render partial: "/layouts/navbar" %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
