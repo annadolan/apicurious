@@ -13,4 +13,11 @@ describe "GithubService" do
       expect(repos.first).to have_key(:html_url)
     end
   end
+  context "#get_user" do
+    it "returns a single user" do
+      user = GithubService.new.get_user("annadolan")
+      expect(user).to be_a(Hash)
+      expect(user[:login]).to eq("annadolan")
+    end
+  end
 end
