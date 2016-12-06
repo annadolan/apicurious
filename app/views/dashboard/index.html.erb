@@ -1,0 +1,62 @@
+<%= render partial: "/layouts/navbar" %>
+<div class="container">
+  <div class="row" style="padding-left: 120px; padding-right: 120px">
+    <div class="col-md-3">
+      <div class="text-left">
+      <ul class="nav" id="sidebar">
+        <li><%= image_tag(current_user.avatar, size:205, :style => "border-radius:5px") %></li>
+      <li style="font-size: 1.7em"><strong><%= current_user.name %></strong></li>
+      <li style="font-size: 1.3em; color: #858e9b"><%= current_user.username %></li>
+      <li><a href="/">Add a bio</a></li>
+      <hr align="left" width=215>
+      <li aria-label="Home location" class="vcard-detail pt-1 css-truncate css-truncate-target" itemprop="homeLocation"><svg aria-hidden="true" class="octicon octicon-location" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M6 0C2.69 0 0 2.5 0 5.5 0 10.02 6 16 6 16s6-5.98 6-10.5C12 2.5 9.31 0 6 0zm0 14.55C4.14 12.52 1 8.44 1 5.5 1 3.02 3.25 1 6 1c1.34 0 2.61.48 3.56 1.36.92.86 1.44 1.97 1.44 3.14 0 2.94-3.14 7.02-5 9.05zM8 5.5c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
+    <%= current_user.location %>
+    </li>
+    <li><svg aria-hidden="true" class="octicon octicon-clock" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M8 8h3v2H7c-.55 0-1-.45-1-1V4h2v4zM7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7z"></path></svg>
+      <span class="join-label">Joined on </span>
+      <local-time class="join-date" day="numeric" month="short" year="numeric"><%= current_user.joined_date.to_datetime.strftime("%b %-d, %Y") %></local-time>
+    </li>
+
+      </ul>
+    </div>
+    </div>
+  <div class="col-md-9">
+    <ul class="nav nav-pills">
+      <li role="presentation"><a href="#">Overview</a></li>
+      <li role="presentation"><a href="#">Repositories</a></li>
+      <li role="presentation"><a href="#">Stars</a></li>
+      <li role="presentation"><a href="#">Followers</a></li>
+      <li role="presentation"><a href="#">Following</a></li>
+    </ul>
+    <hr>
+    <h4 style="font-size: 1.2em">Pinned Repositories <small><span style="float: right"><a href="/">Customize your Pinned Repositories</a></span></small></h4>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            One
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            Two
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            Three
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            Four
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
