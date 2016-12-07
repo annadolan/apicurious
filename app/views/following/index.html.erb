@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row" style="padding-left: 120px; padding-right: 120px">
+    <%= render partial: '/dashboard/sidebar' %>
+  <div class="col-md-9">
+    <%= render partial: '/dashboard/topnav' %>
+<% @following.each do |follow| %>
+<%= image_tag(follow.avatar, size: 75) %>
+<h4><%= follow.name %><small><%= follow.username %></small></h4>
+<%= follow.location %>
+<hr>
+<% end %>
+</div>
+</div>
+</div>

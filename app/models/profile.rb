@@ -1,11 +1,13 @@
 class Profile
-  attr_reader :name, :email, :followers, :following, :starred, :joined_date, :location
+  attr_reader :name, :email, :followers, :following, :starred, :joined_date, :location, :username, :avatar
 
   def initialize(attributes={})
     @name = attributes[:name]
     @email = attributes[:email]
     @joined_date = attributes[:created_at]
     @location = attributes[:location]
+    @username = attributes[:login]
+    @avatar = attributes[:avatar_url]
   end
 
   def self.find_user(token)
@@ -17,7 +19,7 @@ class Profile
     user = GithubService.new(token)
     followers = user.get_followers
     followers.map do |follower|
-      follower_info = user.get_unauthenticated_user(follower[:username])
+      follower_info = user.get_unauthenticated_user(follower[:login])
       Profile.new(follower_info)
     end
   end
@@ -26,7 +28,7 @@ class Profile
     user = GithubService.new(token)
     following = user.get_following
     following.map do |follow|
-      following_info = user.get_unauthenticated_user(follow[:username])
+      following_info = user.get_unauthenticated_user(follow[:login])
       Profile.new(following_info)
     end
   end
