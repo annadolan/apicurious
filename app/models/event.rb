@@ -8,11 +8,20 @@ class Event
     @time = attributes[:created_at]
   end
 
-  def self.find_by_user(token, username)
+  def self.received_by_user(token, username)
     events = GithubService.new(token)
-    mapped = events.get_events(username).map do |event|
+    mapped = events.get_received_events(username).map do |event|
       Event.new(event)
     end
+    mapped.sort! { |a,b| b.time <=> a.time }
+  end
+
+  def self.performed_by_user(token, username)
+    events = GithubService.new(token)
+    mapped = events.get_performed_events(username).map do |event|
+      Event.new(event)
+    end
+    binding.pry
     mapped.sort! { |a,b| b.time <=> a.time }
   end
 end
