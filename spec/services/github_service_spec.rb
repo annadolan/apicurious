@@ -65,4 +65,17 @@ describe "GithubService" do
       end
     end
   end
+
+  context "#get_starred" do
+    it "returns a user's starred repos" do
+      VCR.use_cassette("#get_starred") do
+        starred = GithubService.new(ENV["github_user_token"]).get_starred
+        star = starred.first
+
+        expect(starred).to be_an(Array)
+        expect(star).to have_key(:name)
+        expect(star).to have_key(:owner)
+      end
+    end
+  end
 end

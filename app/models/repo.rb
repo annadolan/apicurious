@@ -19,5 +19,12 @@ class Repo
     mapped.sort! { |a,b| b.updated <=> a.updated }
   end
 
-
+  def self.starred(token)
+    user = GithubService.new(token)
+    starred = user.get_starred
+    stars = starred.map do |star|
+      Repo.new(star)
+    end
+    binding.pry
+  end
 end
