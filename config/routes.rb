@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :dashboard, only: [:index]
 
   get '/repositories', to: 'repo#index'
+  get '/starred', to: 'starred#index'
 
   delete '/logout', to: 'sessions#destroy'
 end
