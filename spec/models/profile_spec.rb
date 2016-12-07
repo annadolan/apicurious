@@ -3,7 +3,8 @@ require 'rails_helper'
 describe "Profile" do
   context "#get_user" do
     it "returns a user's information" do
-      user = Profile.find_user("annadolan")
+      token = ENV["github_user_token"]
+      user = Profile.find_user(token)
 
       expect(user).to be_a(Profile)
       expect(user.name).to eq("Anna Dolan")

@@ -1,16 +1,17 @@
 require 'rails_helper'
 
 describe "Repo" do
-  context "#by_user" do
-    it "returns instance of Repo" do
-      repos = Repo.by_user("annadolan")
+  context ".by_user(token)" do
+    it "returns repos for a user" do
+      repos = Repo.by_user(ENV["github_user_token"])
+      repo = repos.first
 
       expect(repos).to be_a(Array)
-      expect(repos.first).to be_a(Repo)
-      expect(repos.first.repo_id).to be_truthy
-      expect(repos.first.name).to be_truthy
-      expect(repos.first.language).to be_truthy
-      expect(repos.first.url).to be_truthy
+      expect(repo).to be_a(Repo)
+      expect(repo).to respond_to(:repo_id)
+      expect(repo).to respond_to(:name)
+      expect(repo).to respond_to(:language)
+      expect(repo).to respond_to(:url)
     end
   end
 end

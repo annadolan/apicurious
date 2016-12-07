@@ -8,8 +8,8 @@ class Profile
     @location = attributes[:location]
   end
 
-  def self.find_user(current_username)
-    user = GithubService.new.get_user(current_username)
+  def self.find_user(token)
+    user = GithubService.new(token).get_user
     Profile.new(user)
   end
 end

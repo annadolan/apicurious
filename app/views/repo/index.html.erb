@@ -1,12 +1,12 @@
 <div class="container">
-  <div class="row" style="padding-left: 120px; padding-right: 120px">
+  <div class="row" style="padding-left: 120px; padding-right: 10px">
 <%= render partial: 'dashboard/sidebar' %>
 <div class="col-md-9">
   <%= render partial: 'dashboard/topnav' %>
 <div class="row" style="padding-left: 30px">
   <form class="form-inline">
   <div class="form-group">
-    <input type="text" class="form-control" id="exampleInputName2" placeholder="Search Repositories">
+    <input type="text" class="form-control" id="exampleInputName2" placeholder="Search Repositories...">
     <div class="btn-group">
       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Type: <b>All</b> <span class="caret"></span>
@@ -38,7 +38,13 @@
   <% @repos.each do |repo| %>
   <div class="row" style="padding-left: 15px">
   <h4><%= link_to repo.name, repo.url %>
-  <br><br><small><%= repo.language %> Updated <%= time_ago_in_words(repo.updated) %> ago</small></h4>
+  <br><br>
+  <% if repo.language == "Ruby" %>
+    <span style="color: #680b28; font-size: 1.5em">•</span>
+  <% elsif repo.language == "HTML" %>
+    <span style="color: #f21202; font-size: 1.5em">•</span>
+  <% end %>
+  <small><%= repo.language %> Updated <%= time_ago_in_words(repo.updated) %> ago</small></h4>
 </div><hr>
     <% end %>
 </div>
