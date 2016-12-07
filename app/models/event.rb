@@ -21,7 +21,6 @@ class Event
     mapped = events.get_performed_events(username).map do |event|
       Event.new(event)
     end
-    binding.pry
     mapped.sort! { |a,b| b.time <=> a.time }
   end
 end

@@ -11,7 +11,7 @@ describe "Profile" do
         expect(user.name).to eq("Anna Dolan")
         expect(user.location).to eq("Denver, CO")
         expect(user.email).to eq(nil)
-        expect(user.joined_date).to be_truthy
+        expect(user).to respond_to(:joined_date)
       end
     end
   end

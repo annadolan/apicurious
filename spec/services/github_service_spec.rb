@@ -106,4 +106,18 @@ describe "GithubService" do
       end
     end
   end
+
+  context "#get_organizations" do
+    it "returns a user's organizations" do
+      VCR.use_cassette("#get_organizations") do
+        orgs = GithubService.new(ENV["github_user_token"]).get_organizations
+        org = orgs.first
+
+        expect(orgs).to be_an(Array)
+        expect(org).to have_key(:login)
+        expect(org).to have_key(:url)
+        expect(org).to have_key(:avatar_url)
+      end
+    end
+  end
 end

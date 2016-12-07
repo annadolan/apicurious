@@ -10,6 +10,10 @@ describe "Event" do
 
         expect(events).to be_an(Array)
         expect(event).to be_an(Event)
+        expect(event).to respond_to(:event_type)
+        expect(event).to respond_to(:actor)
+        expect(event).to respond_to(:repo)
+        expect(event).to respond_to(:time)
       end
     end
   end
@@ -23,6 +27,10 @@ describe "Event" do
 
         expect(events).to be_an(Array)
         expect(event).to be_an(Event)
+        expect(event).to respond_to(:event_type)
+        expect(event).to respond_to(:actor)
+        expect(event).to respond_to(:repo)
+        expect(event).to respond_to(:time)
       end
     end
   end
