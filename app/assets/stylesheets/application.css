@@ -40,14 +40,31 @@
     line-height: 20px;
     color: #333;
     width: 100%;
+    float: left;
+    width: 360px;
+    margin-right: 10px;
 }
 
 .sidebar-link {
   padding: 0px;
   text-align: left;
 }
-.navbar navbar-default {
-height: 30px;
-background-color: #f5f5f5;
-border-bottom: 1px solid #e5e5e5;
+
+.navbar {
+  min-height: 40px;
+  border: none;
+}
+.navbar-default {
+  height: 30px;
+  background-color: #f5f5f5;
+  background-image: none;
+}
+
+.navbar-default .navbar-nav>li>a {
+  display: block;
+  /*padding: 4px 8px;*/
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #333;
 }
