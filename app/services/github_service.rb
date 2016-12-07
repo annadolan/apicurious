@@ -37,6 +37,11 @@ class GithubService
     parsed = JSON.parse(response.body, symbolize_names: true)
   end
 
+  def get_events(username)
+    response = conn.get("/users/#{username}/received_events")
+    parsed = JSON.parse(response.body, symbolize_names: true)
+  end
+
   private
     attr_reader :token, :conn
 end

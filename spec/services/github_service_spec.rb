@@ -78,4 +78,18 @@ describe "GithubService" do
       end
     end
   end
+
+  context "#get_events(username)" do
+    it "returns a user's events" do
+      VCR.use_cassette("#get_events") do
+        events = GithubService.new(ENV["github_user_token"]).get_events("annadolan")
+        event = events.first
+
+        expect(events).to be_an(Array)
+        expect(event).to have_key(:type)
+        expect(event).to have_key(:actor)
+        expect(event).to have_key(:repo)
+      end
+    end
+  end
 end
