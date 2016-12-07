@@ -51,20 +51,26 @@
 }
 
 .navbar {
-  min-height: 40px;
+  min-height: 45px;
   border: none;
 }
 .navbar-default {
-  height: 30px;
+  height: 40px;
   background-color: #f5f5f5;
+  border-bottom: 1px solid #e5e5e5;
   background-image: none;
 }
 
 .navbar-default .navbar-nav>li>a {
   display: block;
-  /*padding: 4px 8px;*/
-  font-size: 13px;
+  padding: 4px 8px;
+  font-size: 12px;
   font-weight: 600;
   line-height: 20px;
   color: #333;
+  padding-top: 13px;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+  color: #4078c0;
 }
