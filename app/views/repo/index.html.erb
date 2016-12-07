@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row" style="padding-left: 120px; padding-right: 120px">
+<%= render partial: 'dashboard/sidebar' %>
+<div class="col-md-9">
+  <%= render partial: 'dashboard/topnav' %>
+<div class="row">
+  <% @repos.each do |repo| %>
+  <div class="row" style="padding-left: 50px">
+  <h4><%= link_to repo.name, repo.url %></h4>
+  <p><%= repo.language %> Updated <%= time_ago_in_words(repo.updated) %> ago
+</div><hr>
+    <% end %>
+</div>
+</div>

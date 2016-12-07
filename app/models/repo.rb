@@ -1,11 +1,12 @@
 class Repo
-  attr_reader :repo_id, :name, :language, :url
+  attr_reader :repo_id, :name, :language, :url, :updated
 
   def initialize(attributes={})
     @repo_id = attributes[:id]
     @name = attributes[:name]
     @language = attributes[:language]
     @url = attributes[:html_url]
+    @updated = attributes[:updated_at]
   end
 
   def self.by_user(username)

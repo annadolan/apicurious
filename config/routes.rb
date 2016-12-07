@@ -5,5 +5,7 @@ Rails.application.routes.draw do
 
   resources :dashboard, only: [:index]
 
+  get '/repositories', to: 'repo#index'
+
   delete '/logout', to: 'sessions#destroy'
 end
