@@ -25,6 +25,5 @@ class Repo
     stars = starred.map do |star|
       Repo.new(star)
     end
-    binding.pry
   end
 end
