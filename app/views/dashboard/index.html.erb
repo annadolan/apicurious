@@ -10,7 +10,7 @@
       <% @repos[0..1].each do |repo| %>
       <div class="col-md-6">
         <div class="panel panel-default">
-          <div class="panel-body fixed-height">
+          <div class="panel-body">
             <svg aria-hidden="true" class="octicon octicon-grabber" height="12" version="1.1" viewBox="0 0 8 16" width="6"><path fill-rule="evenodd" d="M8 4v1H0V4h8zM0 8h8V7H0v1zm0 3h8v-1H0v1z"></path></svg>
             <%= link_to repo.name, repo.url %>
             <p style="font-size: .7em"><%= repo.description %></p>
@@ -29,7 +29,7 @@
         <% @repos[2..3].each do |repo| %>
         <div class="col-md-6">
           <div class="panel panel-default">
-            <div class="panel-body fixed-height">
+            <div class="panel-body">
               <svg aria-hidden="true" class="octicon octicon-grabber" height="12" version="1.1" viewBox="0 0 8 16" width="6"><path fill-rule="evenodd" d="M8 4v1H0V4h8zM0 8h8V7H0v1zm0 3h8v-1H0v1z"></path></svg>
               <%= link_to repo.name, repo.url %>
               <p style="font-size: .7em"><%= repo.description %></p>
@@ -48,7 +48,7 @@
         <% @repos[4..5].each do |repo| %>
         <div class="col-md-6">
           <div class="panel panel-default">
-            <div class="panel-body fixed-height">
+            <div class="panel-body">
               <svg aria-hidden="true" class="octicon octicon-grabber" height="12" version="1.1" viewBox="0 0 8 16" width="6"><path fill-rule="evenodd" d="M8 4v1H0V4h8zM0 8h8V7H0v1zm0 3h8v-1H0v1z"></path></svg>
               <%= link_to repo.name, repo.url %>
               <p style="font-size: .7em"><%= repo.description %></p>

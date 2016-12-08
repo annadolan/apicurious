@@ -148,10 +148,6 @@
   padding-left: 20px;
 }
 
-.fixed-height {
-  height: 30;
-  overflow-y: scroll;
-}
 
 .panel-body a{
   font-size: 12px;

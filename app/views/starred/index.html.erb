@@ -6,28 +6,29 @@
 <div class="row" style="padding-left: 30px">
   <form class="form-inline">
   <div class="form-group">
-    <input type="text" class="form-control repo-search-bar" id="exampleInputName2" placeholder="Search Repositories...">
+    <input type="text" class="form-control repo-search-bar" id="exampleInputName2" placeholder="Search starred repositories...">
     <div class="btn-group">
       <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Type: <b>All</b> <span class="caret"></span>
+        Language: <b>All languages</b> <span class="caret"></span>
       </button>
       <ul class="dropdown-menu">
-        <li><a href="#">All</a></li>
-        <li><a href="#">Public</a></li>
-        <li><a href="#">Private</a></li>
-        <li><a href="#">Sources</a></li>
-        <li><a href="#">Forks</a></li>
-        <li><a href="#">Mirrors</a></li>
+        <li style="padding-left: 20px;">Select language:</li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#">All languages</a></li>
+        <% @starred.each do |star| %>
+          <li role="separator" class="divider"></li>
+          <li><a href="#"><%= star.language %></a></li>
+        <% end %>
       </ul>
     </div>
     <div class="btn-group">
   <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Language: <b>All</b> <span class="caret"></span>
+    Sort: <b>Recently Starred</b> <span class="caret"></span>
   </button>
   <ul class="dropdown-menu">
-    <li><a href="#">All</a></li>
-    <li><a href="#">HTML</a></li>
-    <li><a href="#">Ruby</a></li>
+    <li><a href="#">Recently Starred</a></li>
+    <li><a href="#">Recently Active</a></li>
+    <li><a href="#">Most Stars</a></li>
   </ul>
 </div>
     <a class="btn btn-success btn-sm" href="#" role="button">New</a>
