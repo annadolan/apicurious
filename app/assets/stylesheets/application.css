@@ -34,8 +34,7 @@
 }
 
 .form-control {
-    height: 30px;
-    padding: 6px 8px;
+    height: 25px;
     font-size: 12px;
     line-height: 20px;
     color: #333;
@@ -53,6 +52,7 @@
 .navbar {
   min-height: 45px;
   border: none;
+  padding-top: 3px;
 }
 .navbar-default {
   height: 40px;
@@ -68,9 +68,82 @@
   font-weight: 600;
   line-height: 20px;
   color: #333;
-  padding-top: 13px;
+  padding-top: 10px;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
   color: #4078c0;
+}
+
+.navbar-brand {
+  padding-top: 7px;
+}
+
+.underline-nav-item {
+  display: table-cell;
+  padding-right: 40px;
+  padding-left: 0px;
+  font-size: 13px;
+  color: #767676;
+  vertical-align: bottom;
+  border-bottom: 2px solid transparent;
+}
+
+.underline-nav {
+  display: block;
+  height: 50px;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-bottom: solid 1px #ddd;
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+
+.underline-nav a {
+  color: #767676
+}
+.underline-nav a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.underline-nav-item.selected {
+  color: #333;
+  border-bottom-color: #c9510c;
+}
+
+.nav>li>a {
+  padding: 0px;
+  padding-top: 10px;
+}
+
+.repo-search-bar {
+  height: 30px;
+  width: 320px !important;
+}
+
+.github-search-bar {
+  width: 330px !important;
+  margin-left: -20px;
+  margin-right: -10px;
+}
+
+.btn btn-default {
+  position: relative;
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #333;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: #eee;
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+}
+
+.dropdown-text {
+  color: #767676;
+  padding-left: 20px;
 }

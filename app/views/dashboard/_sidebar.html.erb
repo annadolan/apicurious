@@ -2,7 +2,7 @@
   <div class="text-left">
   <ul class="nav" id="sidebar">
     <li><%= image_tag(current_user.avatar, size:205, :style => "border-radius:5px") %></li>
-  <li style="font-size: 1.7em"><strong><%= current_user.name %></strong></li>
+  <li style="font-size: 1.7em; padding-top: 10px;"><strong><%= current_user.name %></strong></li>
   <li style="font-size: 1.3em; color: #858e9b"><%= current_user.username %></li>
   <li><a class="sidebar-link" href="/">Add a bio</a></li>
   <hr align="left" width=215>
@@ -14,7 +14,7 @@
   <local-time class="join-date" day="numeric" month="short" year="numeric"><%= current_user.joined_date.to_datetime.strftime("%b %-d, %Y") %></local-time>
 </li>
 <hr align="left" width=215>
-<h4>Organizations</h4>
+<h4 style="font-size: 1em">Organizations</h4>
 <% organizations.each do |org| %>
 <%= link_to image_tag(org.org_avatar, size: 30, :style => "border-radius:5px"), "https://github.com/orgs/#{org.org_name}" %>
 <% end %>
