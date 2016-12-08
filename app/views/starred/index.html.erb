@@ -39,7 +39,7 @@
 <hr>
   <% @starred.each do |repo| %>
   <div class="row" style="padding-left: 15px">
-  <h4><%= link_to repo.name, repo.url %>
+  <h4><%= link_to repo.full_name, repo.url %>
   <br><br>
   <small><p><%= repo.description %></p>
     <p><% if repo.language == "Ruby" %>
