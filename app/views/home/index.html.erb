@@ -1,1 +1,31 @@
-<%= link_to "Login", "https://github.com/login/oauth/authorize?client_id=#{ENV["github_client_id"]}&scope=repo" %>
+<div class="container">
+<% if !logged_in? %>
+  <%= link_to "Login", "https://github.com/login/oauth/authorize?client_id=#{ENV["github_client_id"]}&scope=repo" %>
+<% else %>
+<% @feed.each do |item| %>
+  <p><%= item.actor %>
+  <% if item.event_type == "PushEvent" %>
+    pushed to
+    <% elsif item.event_type == "CreateEvent" %>
+    created
+    <% elsif item.event_type == "PullRequestEvent" %>
+    created a pull request in
+    <% elsif item.event_type == "DeleteEvent" %>
+    made a deletion from
+    <% elsif item.event_type == "WatchEvent" %>
+    watched
+    <% elsif item.event_type == "ForkEvent" %>
+    forked
+    <% elsif item.event_type == "IssueCommentEvent" %>
+    commented on an issue in
+    <% else %>
+    <%= item.event_type %>
+    <% end %>
+
+  <%= link_to item.repo, "https://github.com/#{item.repo}" %></p>
+  <%= time_ago_in_words(item.time) %> ago
+  <hr>
+  <% end %>
+
+<% end %>
+</div>
