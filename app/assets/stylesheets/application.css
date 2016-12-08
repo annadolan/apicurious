@@ -147,3 +147,28 @@
   color: #767676;
   padding-left: 20px;
 }
+
+.fixed-height {
+  height: 30;
+  overflow-y: scroll;
+}
+
+.panel-body a{
+  font-size: 12px;
+  font-weight: bold;
+  padding-left: 4px;
+}
+
+.pinned-repo-link {
+  float: right;
+  font-size: 1.1em;
+}
+
+.pinned-repo-link a{
+  color: #767676;
+}
+
+.pinned-repo-link a:hover{
+  color: #337ab7;
+  text-decoration: none;
+}

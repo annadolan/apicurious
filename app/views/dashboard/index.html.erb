@@ -4,16 +4,16 @@
     <%= render partial: 'sidebar' %>
   <div class="col-md-9">
     <%= render partial: 'topnav' %>
-    <h4 style="font-size: 1.2em">Pinned Repositories <small><span style="float: right"><a href="/">Customize your Pinned Repositories</a></span></small></h4>
+    <h4 style="font-size: 1em">Pinned Repositories <small><span class="pinned-repo-link"><a href="/">Customize your Pinned Repositories</a></span></small></h4>
 
     <div class="row">
-      <% @repos[1..6].each do |repo| %>
+      <% @repos[0..1].each do |repo| %>
       <div class="col-md-6">
         <div class="panel panel-default">
-          <div class="panel-body">
-            <svg aria-hidden="true" class="octicon octicon-grabber" height="16" version="1.1" viewBox="0 0 8 16" width="8"><path fill-rule="evenodd" d="M8 4v1H0V4h8zM0 8h8V7H0v1zm0 3h8v-1H0v1z"></path></svg>
+          <div class="panel-body fixed-height">
+            <svg aria-hidden="true" class="octicon octicon-grabber" height="12" version="1.1" viewBox="0 0 8 16" width="6"><path fill-rule="evenodd" d="M8 4v1H0V4h8zM0 8h8V7H0v1zm0 3h8v-1H0v1z"></path></svg>
             <%= link_to repo.name, repo.url %>
-            <p><%= repo.description %></p>
+            <p style="font-size: .7em"><%= repo.description %></p>
             <p><% if repo.language == "Ruby" %>
               <span style="color: #680b28; font-size: 1.5em">•</span>
             <% elsif repo.language == "HTML" %>
@@ -25,6 +25,44 @@
       </div>
       <% end %>
     </div>
+      <div class="row">
+        <% @repos[2..3].each do |repo| %>
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-body fixed-height">
+              <svg aria-hidden="true" class="octicon octicon-grabber" height="12" version="1.1" viewBox="0 0 8 16" width="6"><path fill-rule="evenodd" d="M8 4v1H0V4h8zM0 8h8V7H0v1zm0 3h8v-1H0v1z"></path></svg>
+              <%= link_to repo.name, repo.url %>
+              <p style="font-size: .7em"><%= repo.description %></p>
+              <p><% if repo.language == "Ruby" %>
+                <span style="color: #680b28; font-size: 1.5em">•</span>
+              <% elsif repo.language == "HTML" %>
+                <span style="color: #f21202; font-size: 1.5em">•</span>
+              <% end %>
+              <%= repo.language %></p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <div class="row">
+        <% @repos[4..5].each do |repo| %>
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-body fixed-height">
+              <svg aria-hidden="true" class="octicon octicon-grabber" height="12" version="1.1" viewBox="0 0 8 16" width="6"><path fill-rule="evenodd" d="M8 4v1H0V4h8zM0 8h8V7H0v1zm0 3h8v-1H0v1z"></path></svg>
+              <%= link_to repo.name, repo.url %>
+              <p style="font-size: .7em"><%= repo.description %></p>
+              <p><% if repo.language == "Ruby" %>
+                <span style="color: #680b28; font-size: 1.5em">•</span>
+              <% elsif repo.language == "HTML" %>
+                <span style="color: #f21202; font-size: 1.5em">•</span>
+              <% end %>
+              <%= repo.language %></p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
