@@ -1,5 +1,6 @@
 class Organization
   attr_reader :org_name, :org_url, :org_avatar
+
   def initialize(attributes={})
     @org_name = attributes[:login]
     @org_url = attributes[:url]

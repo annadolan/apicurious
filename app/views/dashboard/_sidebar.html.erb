@@ -13,7 +13,11 @@
   <span class="join-label">Joined on </span>
   <local-time class="join-date" day="numeric" month="short" year="numeric"><%= current_user.joined_date.to_datetime.strftime("%b %-d, %Y") %></local-time>
 </li>
-
+<hr align="left" width=215>
+<h4>Organizations</h4>
+<% organizations.each do |org| %>
+<%= link_to image_tag(org.org_avatar, size: 30, :style => "border-radius:5px"), "https://github.com/orgs/#{org.org_name}" %>
+<% end %>
   </ul>
 </div>
 </div>

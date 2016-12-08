@@ -37,7 +37,7 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <%= image_tag(current_user.avatar, size: 20) %> <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <%= image_tag(current_user.avatar, size: 20, :style => "border-radius:3px") %> <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li style="padding-left: 20px">Signed in as <br><b><%= current_user.username %></b></li>
             <li role="separator" class="divider"></li>
