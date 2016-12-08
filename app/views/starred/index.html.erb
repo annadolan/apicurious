@@ -41,13 +41,13 @@
   <div class="row" style="padding-left: 15px">
   <h4><%= link_to repo.name, repo.url %>
   <br><br>
-  <% if repo.language == "Ruby" %>
-    <span style="color: #680b28; font-size: 1.5em">•</span>
-  <% elsif repo.language == "HTML" %>
-    <span style="color: #f21202; font-size: 1.5em">•</span>
-  <% end %>
   <small><p><%= repo.description %></p>
-    <span style="font-size: 11px"><p><%= repo.language %>
+    <p><% if repo.language == "Ruby" %>
+    <span style="color: #680b28; font-size: 2em">•</span>
+    <% elsif repo.language == "HTML" %>
+    <span style="color: #f21202; font-size: 2em">•</span>
+    <% end %>
+    <span style="font-size: 11px"><%= repo.language %>
       <span style="padding-left: 20px">Updated <%= time_ago_in_words(repo.updated) %> ago</span></p></span></small></h4>
 </div><hr>
     <% end %>
