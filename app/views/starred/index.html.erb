@@ -46,7 +46,9 @@
   <% elsif repo.language == "HTML" %>
     <span style="color: #f21202; font-size: 1.5em">•</span>
   <% end %>
-  <small><%= repo.language %> Updated <%= time_ago_in_words(repo.updated) %> ago</small></h4>
+  <small><p><%= repo.description %></p>
+    <span style="font-size: 11px"><p><%= repo.language %>
+      <span style="padding-left: 20px">Updated <%= time_ago_in_words(repo.updated) %> ago</span></p></span></small></h4>
 </div><hr>
     <% end %>
 </div>
