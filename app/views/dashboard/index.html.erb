@@ -77,7 +77,7 @@
             <% elsif item.event_type == "DeleteEvent" %>
             made a deletion from
             <% end %>
-          <%= item.repo %></p>
+          <%= link_to item.repo, "https://github.com/#{item.repo}" %></p>
           <%= time_ago_in_words(item.time) %> ago
           <hr>
           <% end %>
