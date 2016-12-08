@@ -63,6 +63,25 @@
         </div>
         <% end %>
       </div>
+      <div class="row" style="padding-top: 30px;">
+        <p>Contribution Activity</p>
+        <hr>
+        <% @feed.each do |item| %>
+          <p><%= item.actor %>
+          <% if item.event_type == "PushEvent" %>
+            pushed to
+            <% elsif item.event_type == "CreateEvent" %>
+            created
+            <% elsif item.event_type == "PullRequestEvent" %>
+            created a pull request in
+            <% elsif item.event_type == "DeleteEvent" %>
+            made a deletion from
+            <% end %>
+          <%= item.repo %></p>
+          <%= time_ago_in_words(item.time) %> ago
+          <hr>
+          <% end %>
+      </div>
     </div>
   </div>
 </div>

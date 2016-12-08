@@ -12,11 +12,10 @@
         Language: <b>All languages</b> <span class="caret"></span>
       </button>
       <ul class="dropdown-menu">
-        <li style="padding-left: 20px;">Select language:</li>
+        <li style="padding-left: 10px;">Select language:</li>
         <li role="separator" class="divider"></li>
         <li><a href="#">All languages</a></li>
         <% @starred.each do |star| %>
-          <li role="separator" class="divider"></li>
           <li><a href="#"><%= star.language %></a></li>
         <% end %>
       </ul>
@@ -26,6 +25,8 @@
     Sort: <b>Recently Starred</b> <span class="caret"></span>
   </button>
   <ul class="dropdown-menu">
+    <li style="padding-left: 10px;">Sort options</li>
+    <li role="separator" class="divider"></li>
     <li><a href="#">Recently Starred</a></li>
     <li><a href="#">Recently Active</a></li>
     <li><a href="#">Most Stars</a></li>
